@@ -9,8 +9,8 @@ creates a 997 response for 4010 and a 999 response for 5010. It can create an ht
 document or can translate to and from an XML representation of the data file."""
 
 setup(
-    name="pyx12",
-    version="2.2.1",
+    name="pyx12-oscar",
+    version="2.3.1.1",
     long_description=long_description,
     license='BSD',
     description="HIPAA X12 validator, parser and converter",
