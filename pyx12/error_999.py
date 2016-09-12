@@ -328,7 +328,7 @@ class error_999_visitor(pyx12.error_visitor.error_visitor):
         if err_ele.subele_pos:
             seg_base.set('01-2', '%i' % (err_ele.subele_pos))
         if err_ele.repeat_pos:
-            seg_base.set('01-3', '%i' % (err_ele.repeatA_pos))
+            seg_base.set('01-3', '%i' % (err_ele.repeat_pos))
         if err_ele.ele_ref_num:
             seg_base.set('02', err_ele.ele_ref_num)
         seg_str = seg_base.format('~', '*', ':')
