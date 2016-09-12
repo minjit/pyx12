@@ -48,7 +48,7 @@ class error_999_visitor(pyx12.error_visitor.error_visitor):
         self.isa_control_num = None
         self.gs_control_num = None
         self.st_control_num = 0
-        self.vriic = '005010X231'
+        self.vriic = '005010X231A1'
 
 
     def visit_root_pre(self, errh):
@@ -167,7 +167,7 @@ class error_999_visitor(pyx12.error_visitor.error_visitor):
         self.st_control_num += 1
         st_seg = pyx12.segment.Segment('ST*999', '~', '*', ':')
         st_seg.set('02', '%04i' % (self.st_control_num))
-        st_seg.set('03', self.vriic)
+        st_seg.set('03', err_gs.vriic)
         self.wr.Write(st_seg)
         ak1 = pyx12.segment.Segment('AK1', '~', '*', ':')
         ak1.set('01', err_gs.fic)
@@ -328,7 +328,7 @@ class error_999_visitor(pyx12.error_visitor.error_visitor):
         if err_ele.subele_pos:
             seg_base.set('01-2', '%i' % (err_ele.subele_pos))
         if err_ele.repeat_pos:
-            seg_base.set('01-3', '%i' % (err_ele.repeat_pos))
+            seg_base.set('01-3', '%i' % (err_ele.repeatA_pos))
         if err_ele.ele_ref_num:
             seg_base.set('02', err_ele.ele_ref_num)
         seg_str = seg_base.format('~', '*', ':')
